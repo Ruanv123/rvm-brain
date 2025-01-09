@@ -803,7 +803,7 @@ export default function TasksPage() {
         </div>
       </div>
 
-      <section>
+      <section className="mt-5">
         <DataTable columns={columns} data={data} />
       </section>
     </>
