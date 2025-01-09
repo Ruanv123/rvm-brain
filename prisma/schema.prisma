@@ -28,6 +28,8 @@ model User {
   sessions      Session[]
   accounts      Account[]
 
+  tasks Task[]
+
   @@unique([email])
   @@map("user")
 }
@@ -75,4 +77,18 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+model Task {
+  id       String @id @default(cuid())
+  title    String
+  status   String
+  label    String
+  priority String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
 }
