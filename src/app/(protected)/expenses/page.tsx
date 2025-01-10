@@ -1,17 +1,14 @@
 import { PageTitle } from "@/components/page-title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DataTableExpenses } from "./components/data-table";
 
 export default function ExpensesPage() {
   return (
-    <div>
+    <div className="grid gap-5">
       <PageTitle
         title="Despesas"
         description="Despesas agrupadas mensalmente"
       />
-
-      <section>
-        <p>filtros</p>
-      </section>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
@@ -112,7 +109,7 @@ export default function ExpensesPage() {
       </div>
 
       <section>
-        <p>data table</p>
+        <DataTableExpenses columns={} data={} />
       </section>
     </div>
   );
