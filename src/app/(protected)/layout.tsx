@@ -14,6 +14,8 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Loader2 } from "lucide-react";
+import { Suspense } from "react";
 
 export default function ProtectedLayout({
   children,
@@ -47,7 +49,11 @@ export default function ProtectedLayout({
             <ModeToggle />
           </div>
         </header>
-        <main className="p-4 flex-1 ">{children}</main>
+        <main className="p-4 flex-1 ">
+          <Suspense fallback={<Loader2 className="animate-spin w-10 h-10" />}>
+            {children}
+          </Suspense>
+        </main>
       </SidebarInset>
     </SidebarProvider>
   );

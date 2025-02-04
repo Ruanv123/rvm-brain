@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Expense } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
@@ -57,13 +58,21 @@ export const expensesColumns: ColumnDef<Expense>[] = [
       return (
         <div>
           <span className="font-medium">
-            {valor.toLocaleString("pt-BR", {
+            {/* {valor.toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",
-            })}
+            })} */}
           </span>
         </div>
       );
     },
+  },
+  {
+    accessorKey: "status",
+    cell: ({ row }) => (
+      <div>
+        <Badge variant={"destructive"}>{row.getValue("status")}</Badge>
+      </div>
+    ),
   },
 ];
