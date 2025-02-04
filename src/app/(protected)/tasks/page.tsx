@@ -1,8 +1,6 @@
 import { PageTitle } from "@/components/page-title";
-import { Button } from "@/components/ui/button";
-import { KanbanSquare, List } from "lucide-react";
-import { DataTable } from "./components/data-table";
 import { columns } from "./components/columns";
+import { DataTable } from "./components/data-table";
 
 const data = [
   {
@@ -789,23 +787,14 @@ const data = [
 
 export default function TasksPage() {
   return (
-    <>
+    <div className="space-y-5">
       <div>
         <PageTitle title="Tarefas" description="Board de tarefas" />
-
-        <div>
-          <Button size={"icon"} variant={"default"}>
-            <List />
-          </Button>
-          <Button size={"icon"} variant={"secondary"}>
-            <KanbanSquare />
-          </Button>
-        </div>
       </div>
 
       <section className="mt-5">
         <DataTable columns={columns} data={data} />
       </section>
-    </>
+    </div>
   );
 }

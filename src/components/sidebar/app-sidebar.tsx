@@ -10,7 +10,7 @@ import {
   PieChart,
   Settings2,
   SquareCheckBig,
-  SquareTerminal
+  SquareTerminal,
 } from "lucide-react";
 import * as React from "react";
 
@@ -18,11 +18,12 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarHeader
+  SidebarHeader,
 } from "@/components/ui/sidebar";
 import { NavProjects } from "./nav-projects";
 import { NavUser } from "./nav-user";
 import { TeamSwitcher } from "./team-switcher";
+import { url } from "inspector";
 
 // This is sample data.
 const data = {
@@ -147,8 +148,8 @@ const data = {
       icon: PieChart,
     },
     {
-      name: "Travel",
-      url: "#",
+      name: "Categories",
+      url: "/categories",
       icon: Map,
     },
   ],

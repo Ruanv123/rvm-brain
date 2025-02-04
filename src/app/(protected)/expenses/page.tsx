@@ -1,8 +1,12 @@
 import { PageTitle } from "@/components/page-title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DataTableExpenses } from "./components/data-table";
+import { expensesColumns } from "./components/columns";
+import { db } from "@/lib/db";
 
-export default function ExpensesPage() {
+export default async function ExpensesPage() {
+  const data = await db.expense.findMany();
+
   return (
     <div className="grid gap-5">
       <PageTitle
@@ -109,7 +113,7 @@ export default function ExpensesPage() {
       </div>
 
       <section>
-        <DataTableExpenses columns={} data={} />
+        <DataTableExpenses columns={expensesColumns} data={data} />
       </section>
     </div>
   );
